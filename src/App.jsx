@@ -14,9 +14,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   return <>
-  
-  <main className="overflow-x-hidden">
-     
+  <BrowserRouter>
+   <main className="overflow-x-hidden">
      <Nav />
      <Hero />
      <Banner />
@@ -25,16 +24,12 @@ const App = () => {
      <Bannerfour />
      <Bannerfive />
      <Dashboard  />
-     <Signup />
-     
-   
+     <Routes>
+      <Route path="/Signup" element={<Signup />}> </Route>
+     </Routes>
 
-    
-
-    
-     
-
-  </main>
+    </main>
+</BrowserRouter>
   
   </>
     
