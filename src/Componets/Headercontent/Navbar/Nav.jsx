@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Signup from '../../Signup/Signup';
 
 
 const NavbarMenu = [
-
     {
         id: 1,
         title: "Home",
@@ -16,7 +16,7 @@ const NavbarMenu = [
     },
     {
         id: 3,
-        title: "UserInfo",
+        title: "User  Info",
         link: "/dashboard",
     },
     {
@@ -34,41 +34,44 @@ const NavbarMenu = [
         title: "Trends",
         link: "#",
     },
-    
+];
 
-
-
-]
 const Nav = () => {
+  const [isSignupOpen, setIsSignupOpen] = useState(false); // State to manage popup visibility
+
+  const handleSignupClick = () => {
+    setIsSignupOpen(true); // Open the signup form
+  };
+
+  const closeSignup = () => {
+    setIsSignupOpen(false); // Close the signup form
+  };
+
   return (
     <nav>
-
         <div className="container flex justify-between items-center py-4 md:pt-4">
             <div className="text-2xl flex items-center gap-1 font-bold">
                 <p className="text-secondary whitespace-pre-wrap">RFIDPAY BrakeLimitsStayWithit</p>
-                
             </div>
             <div className="hidden md:block">
-                
                 <ul className="flex items-center gap-3 text-gray-950">
                    {NavbarMenu.map((menu) => (
                     <li key={menu.id} className="text-xl">
                         <a href={menu.link} className="inline-block py-1 px-3 hover:text-secondary hover:shadow-[0_3px_o_-1px_#23034b] font-semibold
-                        relative text-black before:content-[''] before:absolute before:top-full before:left-0 before:w-0 before:h-[2px] before:bg-secondary before:transition-all before:duration-300 hover:before:w-full" >
+                        relative text-black before:content-[''] before:absolute before:top-full before:left-0 before:w-0 before:h-[2px] before:bg-secondary before:transition-all before:duration-300 hover:before:w-full">
                             {menu.title}
-                            </a>
+                        </a>
                     </li>
-                   ) )}
-                   <Link to = "/Signup" className=" font-semibold text-1xl hover:bg-secondary hover:text-white rounded-full border-3 border-secondary py-1 px-4 duration-200">
+                   ))}
+                   <button onClick={ handleSignupClick} className="font-semibold text-1xl hover:bg-secondary hover:text-white rounded-full border-3 border-secondary py-1 px-4 duration-200">
                     <p>SIGNUP</p>
-                   </Link>
+                   </button>
                 </ul>      
             </div>
         </div>
-    
+        {isSignupOpen && <Signup onClose={closeSignup} />} {/* Render the SignupForm if open */}
     </nav>
   );
-    };
+};
 
-
-export default Nav
+export default Nav;

@@ -8,13 +8,13 @@ import Dashboard from './Componets/Dashboard/Dashboard'
 import Bannerfour from './Componets/Bodycontent/Banners/Bannerfour';
 import Bannerfive from './Componets/Bodycontent/Banners/Bannerfive';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Signup from './Componets/Signup/Signup';
+{/*import Signup from './Componets/Signup/Signup';*/}
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 const App = () => {
   return <>
-  <BrowserRouter>
+  {/*<BrowserRouter>*/}
    <main className="overflow-x-hidden">
      <Nav />
      <Hero />
@@ -24,12 +24,12 @@ const App = () => {
      <Bannerfour />
      <Bannerfive />
      <Dashboard  />
-     <Routes>
+     {/*<Routes>
       <Route path="/Signup" element={<Signup />}> </Route>
-     </Routes>
+     </Routes>*/}
 
     </main>
-</BrowserRouter>
+{/*</BrowserRouter>*/}
   
   </>
     
