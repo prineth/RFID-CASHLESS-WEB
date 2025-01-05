@@ -4,11 +4,12 @@ import Dashboard from "./Componets/Dashboard/Dashboard";
 import Signup from "./Componets/Signup/Signup";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import Home from "./Componets/Bodycontent/Home/home";
+
 import Coverage from "./Componets/Bodycontent/Coverage/Coverage";
 import About from "./Componets/Bodycontent/About/About";
 import Trends from "./Componets/Bodycontent/Trends/Trends";
 import Login from "./Componets/Signup/Login";
+import Home from "./Componets/Bodycontent/Home/home";
 
 const App = () => {
   return (
