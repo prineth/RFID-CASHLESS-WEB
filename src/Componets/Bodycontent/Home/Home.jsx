@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "../Hero/Hero";
+import Hero from "../Hero/hero";
 import Banner from "../Banners/Banner";
 import Bannertwo from "../Banners/Bannertwo";
 import Bannerthree from "../Banners/Bannerthree";
